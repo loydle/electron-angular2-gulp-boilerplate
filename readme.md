@@ -1,42 +1,116 @@
-# Angular 2 + Electron Sample
 
-This Angular 2 and Electron sample app is a simple image calculator that lets users drop images in and find their total size.
+# BoilerPlate
 
-![image-size-calculator app](https://cdn.auth0.com/blog/angular2-electron/angular2-electron-5.png)
+## Technologies
+* BackEnd 
+	* NodeJS
+* FrontEnd
+	* TypeScript
+	* sass
+* Task Runner
+	* Gulp
 
-## Installation
+## Libraries & frameworks
+* BackEnd
+	* Electron
+* FrontEnd
+	* Angular2
 
-To get started, clone the repo to your target directory. This app uses Webpack, and a few commands have been provided as scripts in `package.json`.
+
+## Install
+`$ npm install`
+
+## Run build
+
+`$ npm start`
+
+## Deploy build
+
+`$ npm run deploy`
+
+## Release new version
+
+MacOS
+
+`$ npm run package-mac`
+
+Windows
+
+`$ npm run package-win`
+
+## Important files & folders
 
 ```bash
-npm install
-npm start
+
+.
+├──  README.md
+├──  dist
+├──  e2e
+├──  gulpfile.js
+├──  karma.conf.js
+├──  node_modules
+├──  package-lock.json
+├──  package.json
+├──  protractor.conf.js
+├──  releases
+├──  src
+└──  tslint.json
+
+5 directories, 8 files
+
 ```
 
-## What is Auth0?
+dist/
+> compiled release, this folder is automatically build
+> don't try to modify files here 
 
-Auth0 helps you to:
+node_modules/
+> store node packages installed from `$ npm install`
 
-* Add authentication with [multiple authentication sources](https://docs.auth0.com/identityproviders), either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, amont others**, or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
-* Add authentication through more traditional **[username/password databases](https://docs.auth0.com/mysql-connection-tutorial)**.
-* Add support for **[linking different user accounts](https://docs.auth0.com/link-accounts)** with the same user.
-* Support for generating signed [Json Web Tokens](https://docs.auth0.com/jwt) to call your APIs and **flow the user identity** securely.
-* Analytics of how, when and where users are logging in.
-* Pull data from other sources and add it to the user profile, through [JavaScript rules](https://docs.auth0.com/rules).
+releases/
+> store executable app form `$ npm run package-[mac,win]`
 
-## Create a Free Auth0 Account
+src/
+> store the source code of the app
 
-1. Go to [Auth0](https://auth0.com) and click Sign Up.
-2. Use Google, GitHub or Microsoft Account to login.
+src/app/
+> store angular2 components
 
-## Issue Reporting
+src/assets/
+> store raw assets
+> see gulpfile.js for more info on deploy tasks (minify, images compression, transpiling,..)
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
+src/electron/
+> store core electron backend app
 
-## Author
+src/tsconfig.json
+> describe how to transpile TypeScript files
 
-[Auth0](auth0.com)
+environments/
+> store env variables
 
-## License
+index.html
+> root page used for rendering angular components
 
-This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more info.
+gulpfile.js
+> config gulp tasks
+
+# Angular Components
+
+# Create
+
+> Use angular-cli to create new components
+
+`$ npm install -g angular-cli`
+
+> Generate component.css, component.html, component.spec.ts, component.ts
+> & automatically import component to app.module.ts
+
+`$ ng generate component [name]`
+
+# Remove
+
+> manualy remove src/app/[component] & remove import and references in app.module.ts
+
+
+
